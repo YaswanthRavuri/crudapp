@@ -37,30 +37,32 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    public Student getStudentByID(long id){
+        return studentRepository.findById(id).orElse(null);
+    }
+
     @Transactional
-    public boolean deleteStudent(String studentName){
+    public boolean deleteStudent(long id){
         try{
-            if(studentRepository.deleteByStudentNameContainingIgnoreCase(studentName) == 0){
-                return false;
-            }
+            studentRepository.deleteById(id);
+            return true;
         } catch (Exception e){
             System.out.println(e.getMessage());
             return false;
         }
-
-        return true;
     }
 
     @Transactional
-    public Student updateStudent(Student student){
+    public String updateStudent(Student student){
         try{
             Student student1 = studentRepository.findById(student.getStudentRollNo()).orElse(null);
             if(student1!=null){
                 student1.setStudentName(student.getStudentName());
                 student1.setStudentEmail(student.getStudentEmail());
                 studentRepository.save(student1);
+                return "Updated Successfully";
             }
-            return studentRepository.findById(student.getStudentRollNo()).orElse(null);
+            return null;
         } catch (Exception e){
             System.out.println(e.getMessage());
             return null;
