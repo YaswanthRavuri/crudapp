@@ -1,4 +1,4 @@
-Student Registration Application Demonstrating CRUD operations with REST & Graphql
+Student Registration Application Demonstrating CRUD operations with both REST & Graphql Technologies
 
 Technologies used : 
 •	Java, JavaScript, Html, CSS
@@ -11,4 +11,4 @@ Operations :
 2. Delete a student.
 3. Update student Details.
 4. Read List of Students
-Note : All above operations are implemented using both REST and GraphQL (Switching between two technologies can be done through a Toggle button)
+Note : All above operations are implemented using both REST and GraphQL (Switching between two can be done through a Toggle button)
