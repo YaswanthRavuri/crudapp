@@ -45,3 +45,8 @@
 #form-labels {
   margin-left: -17rem;
 }
+
+#graphqlToggleCheck {
+  width: 40px; 
+  height: 25px;
+}

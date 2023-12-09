@@ -1,0 +1,25 @@
+type Query {
+    getStudents: [Student]
+}
+
+type Mutation {
+    saveStudent(student: StudentInput): Response
+    updateStudent(id: ID, student: StudentInput): Response
+    deleteStudent(id: ID): Response
+}
+
+input StudentInput {
+    studentName: String
+    studentEmail: String
+}
+
+type Student {
+    studentRollNo: ID
+    studentName: String
+    studentEmail: String
+}
+
+type Response {
+    statusCode: Int
+    text: String
+}
